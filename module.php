@@ -2,7 +2,7 @@
 
 class PhoneClientModule extends AApiModule
 {
-	public function GetAppData($oUser = null)
+	public function GetAppData()
 	{
 		return array(
 			'SipImpi' => '102', // AppData.User.SipImpi
