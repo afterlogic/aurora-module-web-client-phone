@@ -195,9 +195,9 @@ CPhone.prototype.incomingCall = function (sNumber)
 			});
 		}, this);
 		
-		if (ModulesManager.isModuleIncluded('ContactsClient'))
+		if (ModulesManager.isModuleIncluded('ContactsWebclient'))
 		{
-			ModulesManager.run('ContactsClient', 'requestUserByPhone', function (sUser) {
+			ModulesManager.run('ContactsWebclient', 'requestUserByPhone', function (sUser) {
 				if (Types.isNonEmptyString(sUser))
 				{
 					fShowAll(sUser);
