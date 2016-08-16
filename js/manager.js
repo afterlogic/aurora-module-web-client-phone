@@ -15,7 +15,7 @@ module.exports = function (oAppData) {
 	
 	return {
 		isAvailable: function (iUserRole, bPublic) {
-			return !bPublic && iUserRole === Enums.UserRole.PowerUser;
+			return !bPublic && iUserRole === Enums.UserRole.NormalUser;
 		},
 		getHeaderItem: function () {
 			return (!Browser.ie && !App.isMobile()) ? {
