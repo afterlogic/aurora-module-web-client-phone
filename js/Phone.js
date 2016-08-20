@@ -109,7 +109,7 @@ CPhone.prototype.showError = function (iErrCode)
 {
 	if (1 === Types.pInt(iErrCode))
 	{
-		Screens.showError(TextUtils.i18n('%MODULENAME%/ERROR_SERVER_UNAVAILABLE'), false, true);
+		Screens.showError(TextUtils.i18n('%MODULENAME%/ERROR_SERVER_UNAVAILABLE'), true);
 	}
 };
 
