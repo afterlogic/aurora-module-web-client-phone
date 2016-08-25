@@ -4,6 +4,8 @@ class PhoneWebclientModule extends AApiModule
 {
 	public function GetAppData()
 	{
+		\CApi::checkUserRoleIsAtLeast(\EUserRole::Anonymous);
+		
 		return array(
 			'SipImpi' => '102', // AppData.User.SipImpi
 			'SipOutboundProxyUrl' => '', // AppData.User.SipOutboundProxyUrl
