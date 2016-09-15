@@ -2,6 +2,12 @@
 
 class PhoneWebclientModule extends AApiModule
 {
+	/***** public functions might be called with web API *****/
+	/**
+	 * Obtaines list of module settings for authenticated user.
+	 * 
+	 * @return array
+	 */
 	public function GetAppData()
 	{
 		\CApi::checkUserRoleIsAtLeast(\EUserRole::Anonymous);
@@ -15,4 +21,5 @@ class PhoneWebclientModule extends AApiModule
 			'VoiceProvider' => '' // AppData.User.VoiceProvider
 		);
 	}
+	/***** public functions might be called with web API *****/
 }
