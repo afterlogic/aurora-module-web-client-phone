@@ -1,6 +1,8 @@
 <?php
 
-class PhoneWebclientModule extends AApiModule
+namespace Aurora\Modules;
+
+class PhoneWebclientModule extends \AApiModule
 {
 	/***** public functions might be called with web API *****/
 	/**
