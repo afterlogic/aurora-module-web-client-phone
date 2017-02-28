@@ -2,7 +2,7 @@
 
 namespace Aurora\Modules;
 
-class PhoneWebclientModule extends \AApiModule
+class PhoneWebclientModule extends \Aurora\System\AbstractModule
 {
 	/***** public functions might be called with web API *****/
 	/**
@@ -12,7 +12,7 @@ class PhoneWebclientModule extends \AApiModule
 	 */
 	public function GetSettings()
 	{
-		\CApi::checkUserRoleIsAtLeast(\EUserRole::Anonymous);
+		\Aurora\System\Api::checkUserRoleIsAtLeast(\EUserRole::Anonymous);
 		
 		return array(
 			'SipImpi' => '102', // AppData.User.SipImpi
