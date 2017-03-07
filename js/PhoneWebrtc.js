@@ -29,10 +29,9 @@ function CPhoneWebrtc()
 	//this.hasFatalError = ko.observable(false);
 	this.isStarted = ko.observable(false);
 
-	this.eventSessionBinded = this.eventSession.bind(this);
-	//this.eventStackBinded = this.eventStack.bind(this);
-	this.createStackErrorBinded = this.createStackError.bind(this);
-	this.createStackBinded = this.createStack.bind(this);
+	this.eventSessionBound = this.eventSession.bind(this);
+	this.createStackErrorBound = this.createStackError.bind(this);
+	this.createStackBound = this.createStack.bind(this);
 
 	//this.videoLocal = document.getElementById('video_local');
 	//this.videoRemote = document.getElementById('video_remote');
@@ -57,7 +56,7 @@ CPhoneWebrtc.prototype.init = function ()
 			self.setConfigs();
 			// Supported values: info, warn, error, fatal.
 			SIPml.setDebugLevel('fatal');
-			SIPml.init(self.createStackBinded, self.createStackErrorBinded);
+			SIPml.init(self.createStackBound, self.createStackErrorBound);
 		}
 	});
 };
@@ -82,7 +81,7 @@ CPhoneWebrtc.prototype.setConfigs = function ()
 		ice_servers: '[{ url: "stun:stun.afterlogic.com:3478"}]',
 		events_listener: {
 			events: '*',
-			listener: this.eventSessionBinded
+			listener: this.eventSessionBound
 		}
 	});
 
@@ -91,7 +90,7 @@ CPhoneWebrtc.prototype.setConfigs = function ()
 		expires: 3600,
 		events_listener: {
 			events: '*',
-			listener: this.eventSessionBinded
+			listener: this.eventSessionBound
 		},
 		sip_caps: [
 			{ name: '+g.oma.sip-im', value: null },
@@ -104,7 +103,7 @@ CPhoneWebrtc.prototype.setConfigs = function ()
 	this.hangupConf({
 		events_listener: {
 			events: '*',
-			listener: this.eventSessionBinded
+			listener: this.eventSessionBound
 		}
 	});
 };
@@ -284,7 +283,7 @@ CPhoneWebrtc.prototype.hangup = function ()
 	if (this.callSession())
 	{
 		this.callSession().hangup(this.hangupConf());
-		this.callSession().hangup({events_listener: {events: '*', listener: this.eventSessionBinded}});
+		this.callSession().hangup({events_listener: {events: '*', listener: this.eventSessionBound}});
 	}
 
 	/*if (this.stack() && this.stack().o_stack.e_state)
