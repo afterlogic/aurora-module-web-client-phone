@@ -2,5 +2,9 @@
     "Disabled": [
 		true,
 		"bool"
+	],
+    "IncludeInDesktop": [
+		false,
+		"bool"
 	]
 }
