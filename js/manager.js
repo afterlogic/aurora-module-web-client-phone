@@ -11,11 +11,10 @@ module.exports = function (oAppData) {
 			Browser = require('%PathToCoreWebclientModule%/js/Browser.js'),
 			App = require('%PathToCoreWebclientModule%/js/App.js'),
 
-			Settings = require('modules/%ModuleName%/js/Settings.js'),
-			oSettings = oAppData['%ModuleName%'] || {}
+			Settings = require('modules/%ModuleName%/js/Settings.js')
 		;
 
-		Settings.init(oSettings);
+		Settings.init(oAppData);
 
 		return {
 			getHeaderItem: function () {
