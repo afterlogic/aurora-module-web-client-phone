@@ -13,7 +13,7 @@
 	<span class="phone_inner">
 		<span class="text call_report empty" data-bind="text: report, css:{'empty': report() === ''}"></span>
 		<span class="text direction" data-bind="">To:</span>
-		<input class="input" spellcheck="false" data-bind="value: input, hasfocus: inputFocus, onEnter: multiAction, valueUpdate: ['blur', 'afterkeydown'], autocompleteSimple: {callback: autocompleteCallback.bind($data), dataAccessor: phoneAutocompleteItem}" />
+		<input class="input" spellcheck="false" data-bind="value: input, hasfocus: inputFocus, valueUpdate: 'afterkeydown', onEnter: multiAction, valueUpdate: ['blur', 'afterkeydown'], autocompleteSimple: {callback: autocompleteCallback.bind($data), dataAccessor: phoneAutocompleteItem}" />
 
 		<span class="buttons">
 			<span class="button" data-bind="customTooltip: statusText, click: multiAction, css: {'hangup': action() === 'connected_out' || action() === 'connected_in'}">
