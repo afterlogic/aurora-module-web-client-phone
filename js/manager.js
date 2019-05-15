@@ -3,7 +3,7 @@
 module.exports = function (oAppData) {
 	var App = require('%PathToCoreWebclientModule%/js/App.js');
 	
-	if (App.getUserRole() === Enums.UserRole.NormalUser)
+	if (App.isUserNormalOrTenant())
 	{
 		require('modules/%ModuleName%/js/enums.js');
 
